@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>{{ title }}</title>
+	
+	<style>
+		
+		body {
+			background-color: #919293;
+			text-align: center;
+			font-family: "Courier New", Courier, monospace;
+			color: #131211;
+		}
+		
+		#container1 {
+			width: 375px;
+			height: 125px;
+			background-color: #979899;
+			padding: 5px;
+			margin: 5px;
+			border-radius: 5px;
+		}
+	
+	</style>
+	
+</head>
+	
+<body>
+<center>
+	
+	<br>
+	
+	<h2><b><u>Trains!</b></u></h2>
+	<h3>(Powered by <b>National Rail Enquiries</b>)</h3>
+	<br>
+	
+		<div id="container1">
+			<br>
+			<form method="POST" action="/darwin_departures">
+				From: <input type="text" name="crs">
+				<br>
+				<br>
+				<input type="submit" value="Get Departures!">
+			</form>
+		</div>
+	
+	<br>
+	
+		<div>
+			<h4>Departures:</h4>
+			<br>
+			<ul>
+			{% for departure in departures %}
+			<li>{{ departure }}</li>
+			{% endfor %}
+			</ul>
+			<br>
+			<br>
+		</div>
+	
+	<br>
+
+		<div>
+			<br>
+			<a href="../darwin_service">Service Checker</a>
+			<br>
+		</div>
+	
+	<br>
+	
+</body>
+
+</html>
